@@ -8,8 +8,8 @@ h2 {
 }
 
 ul {
-	display: center;
 	color: #ffffff;
+	text-align: center;
 }
 
 /* List items in navigation bar */
@@ -21,7 +21,6 @@ li {
 /* Boxes */
 img {
   display: block;
-  display: center;
   margin: 0 auto;
 }
 
@@ -29,7 +28,6 @@ img {
 #item-2,
 #item-3 {
 	display: inline;
-	display: center;
 }
 
 #item-1 {

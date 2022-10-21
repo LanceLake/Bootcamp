@@ -1,0 +1,48 @@
+header {
+  width: 100%;
+  background-color: lightblue;
+}
+
+h2 {
+  text-align: left;
+}
+
+ul {
+  color: #ffffff;
+}
+
+/* List items in navigation bar */
+li {
+  list-style-type: none;
+  font-size: 40px;
+}
+
+/* Boxes */
+img {
+  display: block;
+  display: center;
+  margin: 0 auto;
+}
+
+#item-1,
+#item-2,
+#item-3 {
+	display: inline;
+	display: center;
+}
+
+#item-1 {
+  background-color: #e0115f;
+}
+
+#item-2 {
+  background-color: #0000ff;
+}
+
+#item-3 {
+  background-color: #999900;
+}
+
+/* Box 3 */
+#image-3 {
+}

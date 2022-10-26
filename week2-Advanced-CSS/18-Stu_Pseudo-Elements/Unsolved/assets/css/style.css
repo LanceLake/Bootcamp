@@ -59,9 +59,23 @@ article p {
   font-size: 110%;
 }
 
+.css-text:hover {
+	cursor: pointer;
+	text-decoration: underline;
+}
+
+.css-text:hover::after {
+	position:absolute;
+	top: -50px;
+	background-color: white;
+	border: 2px solid gray;
+	content: "This is the tooltip";
+}
+
 /* TODO: Style the term/phrase - underline, black text, grab cursor */
 
 /* TODO: Position tooltip above the term/phrase, same color as header and nav links, no border-radius, smaller font size */
+
 
 aside {
   width: 25%;

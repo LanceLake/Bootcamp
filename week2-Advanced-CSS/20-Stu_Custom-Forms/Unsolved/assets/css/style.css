@@ -86,6 +86,7 @@ button {
 }
 
 /* What does this CSS rule do? */
+/* Style the select fields */
 select {
   -moz-appearance: none;
   -webkit-appearance: none;
@@ -113,11 +114,15 @@ select:hover, button:hover {
 }
 
 /* What does this pseudo-class mean? */
+/* Sets rules when the box is selected */
+
 .text-input:focus {
   border-right-width: 5px;
 }
 
 /* What does this pseudo-class mean? */
+/* If there is a placeholder, it triggers */
+
 .text-input:placeholder-shown {
   border-style: dashed;
 }
@@ -137,12 +142,14 @@ select:hover, button:hover {
 }
 
 /* What does this selector do? */
+/* When something is +ed, then it will add this to the area of effect. */
 .checkbox:checked + label {
   color: #999999;
   font-style: italic;
 }
 
 /* What does this selector do? */
+/* puts a "thanks!" after the label */
 .checkbox:checked + label::after {
   margin-left: 10px;
   font-size: 90%;

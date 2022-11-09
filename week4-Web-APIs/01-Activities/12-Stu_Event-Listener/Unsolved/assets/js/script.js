@@ -9,4 +9,49 @@ function setCounterText() {
 
 // TODO: Add event listener to increment button
 
+incrementEl.addEventListener
+	(
+		'click', function()
+		{
+			count = count + 1;
+			setCounterText();
+		}
+	);
+
 // TODO: Add event listener to decrement button 
+decrementEl.addEventListener
+	(
+		'click', function()
+		{
+			count = count - 1;
+			setCounterText();
+		}
+	);
+
+
+// Not part of the project, just wanted to do it.
+
+function countdown() 
+{
+	var timeInterval = setInterval(function () 
+	{
+	if (count != 0)
+	{
+		if (count > 0) 
+		{
+			count = count - 1;
+		}
+		else
+		{
+			count = count + 1;
+
+		}
+	};
+
+	setCounterText();
+
+	}
+	, 1000);                                                                            
+};
+
+countdown();

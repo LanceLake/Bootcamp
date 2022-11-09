@@ -9,11 +9,21 @@ function countdown() {
   var timeLeft = 5;
 
   // TODO: Use the `setInterval()` method to call a function to be executed every 1000 milliseconds
-  var timeInterval = setInterval(function () {
-    //
-    // YOUR CODE HERE
-    //
-  });
+  var timeInterval = setInterval(function () 
+  	{
+		if (timeLeft > 0) 
+		{
+			timerEl.textContent = "The count is " + timeLeft;
+			timeLeft = timeLeft - 1;
+		}
+		else
+		{
+			clearInterval(timeInterval);
+			timerEl.textContent = "";
+			displayMessage();
+		}
+	}
+	, 1000);                                                                            
 }
 
 // Displays the message one word at a time

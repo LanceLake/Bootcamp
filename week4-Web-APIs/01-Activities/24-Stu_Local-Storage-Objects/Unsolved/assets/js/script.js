@@ -5,10 +5,21 @@ var passwordInput = document.querySelector("#password");
 var signUpButton = document.querySelector("#sign-up");
 
 signUpButton.addEventListener("click", function(event) {
-  event.preventDefault();
-  
-  // TODO: Create user object from submissio
+	event.preventDefault();
 
-  // TODO: Set new submission to local storage 
-  
+	// TODO: Create user object from submission
+
+	var userObject = {
+		firstName: firstNameInput.value.trim()
+		, lastName: lastNameInput.value.trim()
+		, email: emailInput.value.trim()
+		, password: passwordInput.value.trim()
+	};
+
+	// TODO: Set new submission to local storage 
+	window.localStorage.setItem('user', JSON.stringify(userObject));
+
+	console.log(JSON.parse(window.localStorage.getItem('user')));
+
+
 });

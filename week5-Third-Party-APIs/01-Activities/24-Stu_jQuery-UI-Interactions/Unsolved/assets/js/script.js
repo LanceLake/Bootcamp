@@ -35,6 +35,7 @@ $(function () {
     'Bootstrap',
     'C',
     'C++',
+	'ColdFusion',
     'CSS',
     'Express.js',
     'Git',
@@ -66,3 +67,6 @@ $(function () {
 
 // Add interaction here
 //
+$( function() {
+    $( "#skills-list" ).sortable();
+  } );

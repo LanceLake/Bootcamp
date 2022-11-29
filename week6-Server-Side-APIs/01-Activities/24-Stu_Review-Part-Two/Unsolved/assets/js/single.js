@@ -4,7 +4,7 @@ var limitWarningEl = document.querySelector('#limit-warning');
 
 var getRepoName = function () {
   // Where is this value coming from?
-  // TODO: Write your answer here
+  // From the URL query "Search".
   var queryString = document.location.search;
   var repoName = queryString.split('=')[1];
 
@@ -14,7 +14,7 @@ var getRepoName = function () {
     getRepoIssues(repoName);
   } else {
     // Under what condition will this run?
-    // TODO: Write your answer here
+    // If there is no repoName. 
     document.location.replace('./index.html');
   }
 };
@@ -28,7 +28,7 @@ var getRepoIssues = function (repo) {
         displayIssues(data);
 
         // What is this checking for? Under what condition will this be `true`?
-        // TODO: Write your answer here
+        // URL for next pages in header.
         if (response.headers.get('Link')) {
           displayWarning(repo);
         }
@@ -41,7 +41,7 @@ var getRepoIssues = function (repo) {
 
 var displayIssues = function (issues) {
   // Is there a difference between this and `!issues.length`?
-  // TODO: Write your answer here
+  // Yes. !issues at 0 still means it exists. This is checking to see if it's 0.
   if (issues.length === 0) {
     issueContainerEl.textContent = 'This repo has no open issues!';
     return;
@@ -72,7 +72,7 @@ var displayIssues = function (issues) {
 };
 
 // What does this function do?
-// TODO: Write your answer here
+// Sets the warning elements to show a message saying to visit github to see more issues.
 var displayWarning = function (repo) {
   limitWarningEl.textContent = 'To see more than 30 issues, visit ';
 
@@ -82,7 +82,7 @@ var displayWarning = function (repo) {
   linkEl.setAttribute('target', '_blank');
 
   // Where does this appear on the page?
-  // TODO: Write your answer here
+  // on id of linkEl
   limitWarningEl.appendChild(linkEl);
 };
 

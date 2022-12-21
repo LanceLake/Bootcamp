@@ -17,12 +17,22 @@ function Student(first, last, age) {
     // Ex. 95 => 'A'
     if (typeof input === 'number') {
       // TODO: Add logic here to return a single letter grade
-      return response;
+	  if(inRange(input,90,100)) {response = "A";}
+	  if(inRange(input,80,89)) {response = "B";}
+	  if(inRange(input,70,79)) {response = "C";}
+	  if(inRange(input,60,69)) {response = "D";}
+	  if(inRange(input,0,59)) {response = "F";}
+	  return response;
     }
     // Return a range if a letter grade was passed
     // Ex. 'A' => '90 - 100'
     if (typeof input === 'string') {
       // TODO: Add logic here to return range as a string
+	  if(input === 'A') {response = "90-100";}
+	  if(input === 'B') {response = "80-89";}
+	  if(input === 'C') {response = "70-79";}
+	  if(input === 'D') {response = "60-69";}
+	  if(input === 'F') {response = "0-59";}
       return response;
     }
   };

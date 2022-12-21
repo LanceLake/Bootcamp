@@ -1,4 +1,6 @@
 // TODO: Add a comment describing what kind of function this is
+// Answer: A Constructor
+
 function Character(name, type, age, strength, hitpoints) {
   this.name = name;
   this.type = type;
@@ -8,6 +10,8 @@ function Character(name, type, age, strength, hitpoints) {
 }
 
 // TODO: Add a comment describing the purpose of `.prototype` in this method declaration
+// Answer: It makes another method to the constructor
+
 Character.prototype.printStats = function () {
   console.log(
     `Name: ${this.name}\nProfession: ${this.type}\nAge: ${this.age}\nStrength: ${this.strength}\nHitPoints: ${this.hitpoints}`
@@ -16,6 +20,7 @@ Character.prototype.printStats = function () {
 };
 
 // TODO: Add a comment describing the functionality of this method
+// Answer: If player has hit points left, they are still alive and it tells you.
 Character.prototype.isAlive = function () {
   if (this.hitpoints > 0) {
     console.log(`${this.name} is still alive!`);
@@ -27,11 +32,13 @@ Character.prototype.isAlive = function () {
 };
 
 // TODO: Add a comment describing the functionality of this method
+// Answer: Your attack is your hitpoints minus strength.
 Character.prototype.attack = function (character2) {
   character2.hitpoints -= this.strength;
 };
 
 // TODO: Add a comment describing the functionality of this method
+// Answer: When method is ran, it increases the age and strength and hitpoints of the character.
 Character.prototype.levelUp = function () {
   this.age += 1;
   this.strength += 5;
@@ -47,12 +54,15 @@ rogue.printStats();
 rogue.attack(warrior);
 
 // TODO: Add a comment describing what you expect to see printed in the console
+// Answer: See above with only the warrior
 warrior.printStats();
 
 // TODO: Add a comment describing what you expect to see printed in the console
+// Answer: See above with only the warrior.
 warrior.isAlive();
 
 rogue.levelUp();
 
 // TODO: Add a comment describing what you expect to see printed in the console
+// Answer: See above with the rogue.
 rogue.printStats();

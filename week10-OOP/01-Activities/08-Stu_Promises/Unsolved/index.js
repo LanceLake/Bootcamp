@@ -29,6 +29,6 @@ const errorCallback = (message) => console.log(message);
 // TODO: Refactor to call 'practiceCoding()' and chain a 'then()' to log "We are coding in promises!" in the console
 // TODO: Chain a 'catch()' to log "Promise rejected: " and the error
 practiceCoding()
-.then(() => console.log('Coding!');
-.catch((err) => console.log('Coding!');
+.then(() => console.log('Coding!'))
+.catch((err) => console.log('Promise rejected: ' + err))
 

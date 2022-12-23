@@ -7,7 +7,7 @@ const reversed = algo.reverse(str1);
 
 console.log(str1, "->", reversed);
 
-const str2 = "racacar";
+const str2 = "racecar";
 const isPalindrome = algo.isPalindrome(str2);
 
 console.log(str2, "->", isPalindrome);

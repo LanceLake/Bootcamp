@@ -7,6 +7,7 @@ describe("DayCare", () => {
       const dayCare = new DayCare();
 
       // TODO: Add a comment describing the purpose of the following statement
+	  // Answer: Check to see if dayCare is equal to the array has the proper properities. 
       expect(dayCare).toEqual({ children: [], capacity: 3, ageLimit: 6 });
     });
   });
@@ -14,13 +15,16 @@ describe("DayCare", () => {
   describe("addChild", () => {
     it("should add a child to the 'children' array", () => {
       // TODO: Add a comment describing the purpose of the following declarations
+	  // Answer: 
       const child = new Child("Tammy", 1);
       const dayCare = new DayCare();
 
       // TODO: Add a comment describing the purpose of the following method
+	  // Answer: 
       dayCare.addChild(child);
 
       // TODO: Add a comment describing the purpose of the following statements
+	  // Answer: 
       expect(dayCare.children.length).toEqual(1);
       expect(dayCare.children[0]).toBe(child);
     });
@@ -32,6 +36,7 @@ describe("DayCare", () => {
       dayCare.addChild(child);
 
       // TODO: Add a comment describing the purpose of the following statement
+	  // Answer: 
       expect(dayCare.children.length).toEqual(0);
     });
 
@@ -40,6 +45,7 @@ describe("DayCare", () => {
       const child = new Child("Alice", 4);
 
       // TODO: Add a comment describing the purpose of the following expression
+	  // Answer: 
       dayCare.children = [
         new Child("Tammy", 1),
         new Child("Mark", 2),
@@ -49,6 +55,7 @@ describe("DayCare", () => {
       dayCare.addChild(child);
 
       // TODO: Add a comment describing the purpose of the following statement
+	  // Answer: 
       expect(dayCare.children.length).toEqual(3);
     });
 
@@ -59,12 +66,14 @@ describe("DayCare", () => {
       );
 
       // TODO: Add a comment describing the purpose of the following expression
+	  // Answer: 
       const cb = () => {
         const dayCare = new DayCare();
         dayCare.addChild();
       };
 
       // TODO: Add a comment describing the purpose of the following statement
+	  // Answer: 
       expect(cb).toThrowError(err);
     });
   });
@@ -78,12 +87,14 @@ describe("DayCare", () => {
       dayCare.children = [child1, child2, child3];
 
       // TODO: Add a comment describing the purpose of the following declaration
+	  // Answer: 
       const removed = dayCare.pickupChild(child2.name);
 
       expect(removed).toBe(child2);
       expect(dayCare.children.length).toEqual(2);
 
       // TODO: Add a comment describing the purpose of the following statement
+	  // Answer: 
       expect(
         dayCare.children.some(child => child.name === child2.name)
       ).toEqual(false);
@@ -97,12 +108,15 @@ describe("DayCare", () => {
       dayCare.children = [child1, child2, child3];
 
       // TODO: Add a comment describing the purpose of the following declaration
+	  // Answer: 
       const removed = dayCare.pickupChild("Fred");
 
       // TODO: Add a comment describing the purpose of the following statement
+	  // Answer: 
       expect(typeof removed).toEqual("undefined");
 
       // TODO: Add a comment describing the purpose of the following statement
+	  // Answer: 
       expect(dayCare.children).toEqual([child1, child2, child3]);
     });
   });

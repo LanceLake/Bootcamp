@@ -27,6 +27,6 @@ const playGames = (reward) => {
 };
 
 willGetSwitch
-  .then(playGames)
-  .then((resolved) => console.log(resolved))
-  .catch((err) => console.error(err));
+  .then(playGames) // Will trigger if successful
+  .then((SuccessValueCanBeAnything) => console.log(SuccessValueCanBeAnything)) // Will trigger if successful
+  .catch((error) => console.error(error)); // Will ONLY trigger if fails.

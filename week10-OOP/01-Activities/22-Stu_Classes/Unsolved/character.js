@@ -1,10 +1,41 @@
 class Character {
-  // TODO: Add a constructor
-  // TODO: Create a printStats() method that console logs `this.name`, `this.strength`, and `this.hitPoints`
+	// TODO: Add a constructor
+	constructor(name, strength, hitPoints) {
+		this.name = name;
+		this.strength = strength;
+		this.hitPoints = hitPoints;
+	}
 
-  // TODO: Create a isAlive() method that returns a boolean based on whether or not a character's "hitpoints" are <= 0
+	// TODO: Create a printStats() method that console logs `this.name`, `this.strength`, and `this.hitPoints`
+	printStats() {
+		console.log(`${this.name} has a strength of ${this.strength} and ${this.hitPoints} hitpoints.`);
+	}
 
-  // TODO: Create a attack() method that accepts an opponent object and decreases the opponent's "hitPoints" by this character's strength
+	// TODO: Create a isAlive() method that returns a boolean based on whether or not a character's "hitpoints" are <= 0
+	isAlive() {
+		if(this.hitPoints <= 0) {return false;} else {return true;}
+	}
+
+	// TODO: Create a attack() method that accepts an opponent object and decreases the opponent's "hitPoints" by this character's strength
+	attack(defender) {
+		let crit = Math.floor(Math.random() * 19) + 1;
+		let randomDamage = (Math.floor(Math.random() * 6)) - 3;
+
+		let damage = this.strength + randomDamage
+
+		if(crit == 20) {
+			damage = damage * 2;
+			console.log(`${this.name} HITS A CRIT!`);
+		}
+
+		defender.hitPoints = defender.hitPoints - (damage);
+		console.log(`${this.name} hits ${defender.name} for ${damage} hitpoints of damage.`);
+
+	}
+
+
+
+
 }
 
 // Creates two unique characters using the "character" constructor

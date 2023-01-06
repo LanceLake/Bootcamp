@@ -11,9 +11,11 @@ const sortHelper = (type) =>
   termData.sort(sortData('term', 'relevance', `${type}`));
 
 // TODO: Add a comment describing the functionality of this route
+// Answer: GET route to all the terms.
 
 app.get('/api/terms/', (req, res) => {
   // TODO: Add a comment describing the req.query object
+// Answer: Checking to see if the param exists.
 
   const hasQuery = Object.keys(req.query).length > 0;
 
@@ -30,7 +32,7 @@ app.get('/api/terms/', (req, res) => {
 });
 
 // TODO: Add a comment describing what this route will return
-
+// Answer: The data in the array at the location the term variable matches.
 app.get('/api/term/:term', (req, res) => {
   // TODO: Add a comment describing the content of req.params in this instance
 

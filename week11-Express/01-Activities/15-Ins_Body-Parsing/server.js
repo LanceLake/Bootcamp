@@ -23,15 +23,8 @@ app.post('/api/reviews', (req, res) => {
   // Log that a POST request was received
   console.info(`${req.method} request received to add a review`);
 
-  // Prepare a response object to send back to the client
-  let response;
-
   // Check if there is anything in the response body
-  if (req.body && req.body.product) {
-    response = {
-      status: 'success',
-      data: req.body,
-    };
+  if (req.body?.product) {  // Optional Chaining
     res.json(`Review for ${response.data.product} has been added!`);
   } else {
     res.json('Request body must at least contain a product name');

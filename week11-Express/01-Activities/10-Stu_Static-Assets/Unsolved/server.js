@@ -8,7 +8,7 @@ const path = require('path');
 // Allows us to reference files with their relative path
 // Example: http://localhost:3000/images/cat.jpg
 
-app.get('/', (req, res) => res.sendFile(path.join(__dirname, '/public/')));
+app.use(express.static('public'));          
 
 app.listen(PORT, () =>
   console.log(`Serving static asset routes on port ${PORT}!`)

@@ -36,6 +36,10 @@ app.post('/api/reviews', (req, res) => {
 
   // If all the required properties are present
   if (product && review && username) {
+
+	fs.readFile("./db/reviews.json", "utf8", (error, data) => {
+	const reviews = data ? JSON.parse(data) : [];
+
     // Variable for the object we will save
     const newReview = {
       product,
@@ -44,8 +48,10 @@ app.post('/api/reviews', (req, res) => {
       review_id: uuid(),
     };
 
+	reviews.push(newReview);
+
     // Convert the data to a string so we can save it
-    const reviewString = JSON.stringify(newReview);
+    const reviewString = JSON.stringify(reviews);
 
     // Write the string to a file
     fs.writeFile(`./db/reviews.json`, reviewString, (err) =>
@@ -63,9 +69,9 @@ app.post('/api/reviews', (req, res) => {
 
     console.log(response);
     res.status(201).json(response);
-  } else {
+  })} else {
     res.status(500).json('Error in posting review');
-  }
+  };
 });
 
 app.listen(PORT, () =>

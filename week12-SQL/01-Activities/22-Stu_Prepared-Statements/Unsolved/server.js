@@ -24,9 +24,9 @@ const db = mysql.createConnection(
 
 // Query database
 
-let deletedRow = 2;
+let valueComingFromClient = 2;
 
-db.query(`DELETE FROM favorite_books WHERE id = ?` (err, result) => {
+db.query('DELETE FROM favorite_books WHERE id = ?', valueComingFromClient, (err, result) => {
   if (err) {
     console.log(err);
   }

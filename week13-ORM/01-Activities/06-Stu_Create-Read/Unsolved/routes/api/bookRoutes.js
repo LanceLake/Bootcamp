@@ -2,24 +2,32 @@ const router = require('express').Router();
 const Book = require('../../models/Book');
 
 // TODO: Add a comment describing the purpose of this route
+// Answer: Enter a book into the database.
+
 router.get('/', (req, res) => {
   // TODO: Add a comment describing the functionality of this method
+// Answer:  Getting all of the books from the table.
+
   Book.findAll().then((bookData) => {
     res.json(bookData);
   });
 });
 
 // TODO: Add a comment describing the purpose of this route
+// Answer: Getting all of the books from the table that are paperbacks due to the where clause.
 router.get('/paperbacks', (req, res) => {
   Book.findAll({
     // TODO: Add a comment describing the functionality of this property
+// Answer: Order by
     order: ['title'],
     // TODO: Add a comment describing the functionality of this property
+// Answer: Where clause
     where: {
       is_paperback: true
     },
     attributes: {
       // TODO: Add a comment describing the functionality of this property
+// Answer: Don't find items that have this data
       exclude: ['is_paperback', 'edition']
     }
   }).then((bookData) => {
@@ -28,8 +36,10 @@ router.get('/paperbacks', (req, res) => {
 });
 
 // TODO: Add a comment describing the purpose of this route
+// Answer: Find the book with this ID
 router.get('/:id', (req, res) => {
   // TODO: Add a comment describing the functionality of this method
+// Answer: Pull up whatever the ID is in the URL to find the proper book (findByPk)
   Book.findByPk(req.params.id).then((bookData) => {
     res.json(bookData);
   });

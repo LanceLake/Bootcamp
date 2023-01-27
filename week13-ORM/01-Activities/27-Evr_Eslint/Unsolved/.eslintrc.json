@@ -13,6 +13,7 @@
     "no-func-assign": "error",
     "no-irregular-whitespace": "error",
     "no-unreachable": "error",
+    "comma-dangle": ["error", "never"],
     "curly": "error",
     "dot-notation": "error",
     "eqeqeq": "error",

@@ -17,10 +17,12 @@ LibraryCard.init(
       defaultValue: UUIDV4,
     },
     // TODO: Add a comment describing what this column holds information for 
-    reader_id: {
+    // Answer: The reader ID pulled from table Reader
+	reader_id: {
       type: DataTypes.INTEGER,
       references: {
         // TODO: Add a comment describing where `reader` comes from
+		// Answer: Reader is it's own model
         model: 'reader',
         key: 'id',
       },

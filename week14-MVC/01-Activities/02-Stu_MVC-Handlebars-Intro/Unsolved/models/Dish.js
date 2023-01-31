@@ -2,6 +2,7 @@
 
 // TODO: Add a comment indicating how this file fits into the MVC framework. 
 // TODO: What is it responsible for handling?
+// Answer: Models. The data itself.
 
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');

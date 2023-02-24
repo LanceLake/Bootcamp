@@ -14,7 +14,7 @@ test('Checkng log for correct values, Dominique, 11th', () => {
   const newStudent = Student('Dominique', '11th');
   newStudent.greet();
   expect(consoleSpy).toHaveBeenCalledWith(
-    'My name is Dominique and I am in 11th grade'
+    'My name is Dominique and I am in 11th grade.'
   );
 });
 
@@ -23,6 +23,6 @@ test('Checkng log for correct values, Raphael, 4th', () => {
   const newStudent = Student('Raphael', '4th');
   newStudent.greet();
   expect(consoleSpy).toHaveBeenCalledWith(
-    'My name is Raphael and I am in 4th grade'
+    'My name is Raphael and I am in 4th grade.'
   );
 });

@@ -16,6 +16,7 @@ module.exports = {
       .catch((err) => res.status(500).json(err));
   },
   // TODO: Add comments to the functionality of the createApplication method
+  // Answer: Adds an application and then puts the ID into the user record of who submitted it.
   createApplication(req, res) {
     Application.create(req.body)
       .then((application) => {
@@ -38,6 +39,7 @@ module.exports = {
       });
   },
   // TODO: Add comments to the functionality of the updateApplication method
+  // Answer: Updates a record that has the ID and sets the body entered.
   updateApplication(req, res) {
     Application.findOneAndUpdate(
       { _id: req.params.applicationId },
@@ -55,6 +57,7 @@ module.exports = {
       });
   },
   // TODO: Add comments to the functionality of the deleteApplication method
+  // Answer: Removes the record and then checks the users who have that in the applications record and "pulls" it (Deletes it).
   deleteApplication(req, res) {
     Application.findOneAndRemove({ _id: req.params.applicationId })
       .then((application) =>
@@ -76,6 +79,7 @@ module.exports = {
       .catch((err) => res.status(500).json(err));
   },
   // TODO: Add comments to the functionality of the addTag method
+  // Answer: Adds the tag entered based on the application ID
   addTag(req, res) {
     Application.findOneAndUpdate(
       { _id: req.params.applicationId },
@@ -90,6 +94,7 @@ module.exports = {
       .catch((err) => res.status(500).json(err));
   },
   // TODO: Add comments to the functionality of the addTag method
+  // Answer: Removes said tag.
   removeTag(req, res) {
     Application.findOneAndUpdate(
       { _id: req.params.applicationId },

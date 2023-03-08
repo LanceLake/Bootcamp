@@ -15,13 +15,14 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: './index.html',
       title: 'Webpack Plugin',
-    }),
+    }), 
+    new MiniCssExtractPlugin()
   ],
   module: {
     rules: [
       {
         test: /\.css$/i,
-        use: ['style-loader', 'css-loader'],
+        use: [MiniCssExtractPlugin.loader, 'css-loader'],
       },
       {
         test: /\.(png|svg|jpg|jpeg|gif)$/i,

@@ -2,7 +2,7 @@ import React from 'react';
 import Card from './Card';
 
 const feline = {
-  name: 'Fluffykins',
+  catName: 'Fluffykins',
   description: 'A cat that acts like a dog',
   id: 1,
 };
@@ -10,8 +10,8 @@ const feline = {
 export default function Display() {
   return (
     <div>
-        // TODO: Write logic that will render a Card component for the kitten
-        // TODO: Pass `name`, `description`, and `id` to the Card component as props
+		<Card name={feline.catName} description={feline.description} id={feline.id}/>
     </div>
   );
 }
+

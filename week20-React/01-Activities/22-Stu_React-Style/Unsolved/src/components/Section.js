@@ -4,10 +4,16 @@ import '../styles/Section.css';
 
 // TODO: Create a styles object called "styles"
 
+const styles = {
+  section: {
+    background: '#ef9299',
+  },
+};
+
 function Section() {
   // TODO: Add a style attribute to `section`
   return (
-    <section className="section">
+    <section style={styles.section} className="section">
       <h2>Lorem Ipsum Dolor Sit Amet</h2>
       <p>
         Sed ut perspiciatis unde omnis iste natus error sit voluptatem

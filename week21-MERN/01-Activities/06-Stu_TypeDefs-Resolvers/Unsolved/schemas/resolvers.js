@@ -13,7 +13,7 @@ const resolvers = {
     },
     // TODO: Update resolver to include classes
     professors: async () => {
-      return await Professor.find({});
+      return await Professor.find({}).populate('classes');
     }
   }
 };

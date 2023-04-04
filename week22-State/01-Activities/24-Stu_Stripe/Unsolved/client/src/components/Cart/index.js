@@ -10,7 +10,7 @@ import { TOGGLE_CART, ADD_MULTIPLE_TO_CART } from '../../utils/actions';
 import './style.css';
 
 // TODO: Add a comment describing the functionality of loadStripe
-// Your comment here
+// Answer: loadStripe is a function that takes a Stripe API key as an argument and returns a promise that resolves to a Stripe object. The Stripe object contains methods for working with Stripe.
 const stripePromise = loadStripe('pk_test_TYooMQauvdEDq54NiTphI7jx');
 
 const Cart = () => {
@@ -18,8 +18,8 @@ const Cart = () => {
   const [getCheckout, { data }] = useLazyQuery(QUERY_CHECKOUT);
 
   // TODO: Add a comment describing the functionality of the useEffect hook in this instance
-  // Your comment here
-  useEffect(() => {
+  // Answer: The useEffect hook is used to perform side effects in function components. In this instance, we are using it to redirect the user to the Stripe checkout page.
+	useEffect(() => {
     if (data) {
       stripePromise.then((res) => {
         res.redirectToCheckout({ sessionId: data.checkout.session });
@@ -28,7 +28,7 @@ const Cart = () => {
   }, [data]);
 
   // TODO: Add a comment describing what data we are watching and what work should be preformed if that data changes
-  // Your comment here
+  // Answer: We are watching the state.cart.length property and if it changes, we are running the getCart function.
   useEffect(() => {
     async function getCart() {
       const cart = await idbPromise('cart', 'get');
@@ -53,7 +53,7 @@ const Cart = () => {
   }
 
   // TODO: Add a comment describing the functionality of our submitCheckout function.
-  // Your comment here
+  // Answer: The submitCheckout function is used to submit the user's cart to the server and redirect them to the Stripe checkout page.
   function submitCheckout() {
     const productIds = [];
 

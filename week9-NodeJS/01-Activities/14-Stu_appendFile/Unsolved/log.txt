@@ -1,4 +1,0 @@
-appended
-twice
-This is a string
-undefined
